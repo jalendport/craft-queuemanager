@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 280 280" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <polygon fill="#e3342f" points="0 60 140 20 280 60 140 100 0 60"/>
+  <polygon fill="#cc1f1a" points="140 140 0 100 0 60 140 100 140 140"/>
+  <polygon fill="#ef5753" points="140 140 280 100 280 60 140 100 140 140"/>
+  <polygon fill="#de751f" points="140 200 0 160 0 120 140 160 140 200"/>
+  <polygon fill="#faad63" points="140 200 280 160 280 120 140 160 140 200"/>
+  <polygon fill="#1f9d55" points="140 260 0 220 0 180 140 220 140 260"/>
+  <polygon fill="#51d88a" points="140 260 280 220 280 180 140 220 140 260"/>
+</svg>

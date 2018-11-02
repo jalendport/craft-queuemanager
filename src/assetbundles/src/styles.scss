@@ -1,0 +1,70 @@
+@tailwind preflight;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* Overrides */
+
+#main-container #main #header {
+    @apply tw-hidden;
+}
+
+#main-container #main #main-content #content-container #content {
+    @apply tw-p-0;
+}
+
+/* Table */
+
+.qm-table {
+    @apply tw-w-full tw-text-sm tw-text-black;
+
+    thead {
+        @apply tw-bg-grey-lighter;
+
+        th {
+            @apply tw-px-6 tw-py-4 tw-font-normal tw-text-black;
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                @apply tw-px-6 tw-py-4;
+            }
+
+            &:not(:last-child) {
+                @apply tw-border-b tw-border-solid tw-border-grey-lighter;
+            }
+        }
+    }
+}
+
+/* Status Labels */
+
+.qm-status {
+    @apply tw-font-bold;
+
+    &.qm-red {
+        @apply tw-text-red-dark;
+    }
+}
+
+/* Actions */
+
+.qm-action {
+    @apply tw-block tw-text-grey-dark tw-cursor-pointer;
+
+    svg {
+        @apply tw-block tw-w-4 tw-fill-current tw-pointer-events-none;
+    }
+
+    &:hover {
+        @apply tw-text-black;
+    }
+
+    &:focus,
+    &:active {
+        @apply tw-outline-none;
+    }
+}

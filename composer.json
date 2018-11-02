@@ -1,0 +1,40 @@
+{
+    "name": "lukeyouell/craft-queue-manager",
+    "description": "Job Queue Manager for Craft CMS.",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "queue manager"
+    ],
+    "support": {
+        "docs": "https://github.com/lukeyouell/craft-queue-manager/blob/master/README.md",
+        "issues": "https://github.com/lukeyouell/craft-queue-manager/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Youell",
+            "homepage": "https://github.com/lukeyouell"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "lukeyouell\\queuemanager\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Queue Manager",
+        "handle": "queue-manager",
+        "hasCpSettings": false,
+        "hasCpSection": true,
+        "changelogUrl": "https://raw.githubusercontent.com/lukeyouell/craft-queue-manager/master/CHANGELOG.md",
+        "class": "lukeyouell\\queuemanager\\QueueManager"
+    }
+}

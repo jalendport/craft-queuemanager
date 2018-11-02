@@ -1,0 +1,48 @@
+{% extends "_layouts/cp" %}
+
+{% block content %}
+  <div class="tw-bg-grey-lighter tw-min-h-screen">
+    <div class="tw-p-8">
+      <div class="tw-bg-white tw-rounded tw-shadow tw-overflow-hidden">
+        <div class="tw-flex tw-items-center tw-justify-between tw-p-6 tw--mx-4">
+          <div class="tw-px-4 tw-text-lg tw-text-black">{{ title }}</div>
+          <div class="tw-px-4 tw-text-black">Status filter</div>
+        </div>
+
+        <table class="qm-table">
+          <thead>
+            <tr>
+              <th>Job</th>
+              <th class="tw-w-px">Status</th>
+              <th class="tw-w-px">Happened</th>
+              <th class="tw-w-px"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {% for job in jobs %}
+              <tr>
+                <td>
+                  {{ job.description }}
+                </td>
+                <td>
+                  {% if job.fail %}
+                    <div class="qm-status qm-red">failed</div>
+                  {% endif %}
+                </td>
+                <td>
+                  {{ job.timePushed|timestamp('short') }}
+                </td>
+                <td>
+                  <button class="qm-action">
+                    {% include "queue-manager/_icons/solid/eye.svg" ignore missing %}
+                  </button>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
