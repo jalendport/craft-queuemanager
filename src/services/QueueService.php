@@ -14,12 +14,12 @@ class QueueService extends Component
     // Public Methods
     // =========================================================================
 
-    public function getJobs($status)
+    public function getJobs($status = null)
     {
         $query = $this->_createJobQuery();
 
         switch ($status) {
-            case 'waiting':
+            case 'pending':
                 $query->where(['fail' => false, 'timeUpdated' => null]);
                 break;
 
@@ -42,7 +42,11 @@ class QueueService extends Component
                 'data'        => unserialize($result['job']),
                 'description' => $result['description'],
                 'timePushed'  => $result['timePushed'],
+                'timeUpdated' => $result['timeUpdated'],
+                'ttr'         => $result['ttr'],
+                'priority'    => $result['priority'],
                 'fail'        => (int)$result['fail'],
+                'dateFailed'  => $result['dateFailed'],
                 'error'       => $result['error'],
             ];
         }
@@ -57,7 +61,7 @@ class QueueService extends Component
     {
         return (new Query())
             ->from('{{%queue}}')
-            ->orderBy(['timePushed' => SORT_ASC])
-            ->limit(50);
+            ->orderBy(['timePushed' => SORT_DESC])
+            ->limit(200);
     }
 }

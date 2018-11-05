@@ -27,10 +27,10 @@ class CpController extends Controller
         ];
     }
 
-    public function actionJobs($status = null, array $variables = [])
+    public function actionJobs(array $variables = [])
     {
         $variables = array_merge($this->variables, $variables, [
-            'jobs' => QueueManager::$plugin->queue->getJobs($status)
+            'jobs' => $this->_getJobs()
         ]);
 
         $this->view->registerAssetBundle(CpBundle::class);
@@ -40,6 +40,12 @@ class CpController extends Controller
 
     // Private Methods
     // =========================================================================
+
+    private function _getJobs() {
+        $status = Craft::$app->getRequest()->getParam('status');
+
+        return QueueManager::$plugin->queue->getJobs($status);
+    }
 
     private function _getNavItems()
     {
