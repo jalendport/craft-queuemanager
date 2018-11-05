@@ -73,3 +73,5 @@ Some things to do, and ideas for potential features:
 
 - Cron documentation
 - Responsive tables
+- Filter results
+- Automatically refresh jobs
