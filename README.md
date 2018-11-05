@@ -4,6 +4,8 @@
 
 Job Queue Manager for Craft CMS.
 
+<img src="resources/screenshots/cp.png" alt="cp">
+
 ## Installation
 
 #### Requirements
@@ -29,3 +31,45 @@ composer require lukeyouell/craft-queue-manager
 ```
 
 3. In the Control Panel, go to Settings → Plugins and click the “Install” button for Queue Manager.
+
+## Features
+
+- View detailed job information
+- Retry or cancel individual jobs
+- Retry or cancel the full queue
+- Console commands that offer the same functionality as found in the CP
+
+### Console commands
+
+#### Retrying jobs
+
+Individual:
+
+```
+./craft queue-manager/queue/retry id
+```
+
+Full queue:
+```
+./craft queue-manager/queue/retry-all
+```
+
+#### Cancelling jobs
+
+Individual:
+
+```
+./craft queue-manager/queue/cancel id
+```
+
+Full queue:
+```
+./craft queue-manager/queue/cancel-all
+```
+
+## Roadmap
+
+Some things to do, and ideas for potential features:
+
+- Cron documentation
+- Responsive tables
