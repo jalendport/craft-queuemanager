@@ -4,7 +4,7 @@
 
 Job Queue Manager for Craft CMS.
 
-<img src="resources/screenshots/cp.png" alt="cp">
+<img src="resources/screenshots/qm-cp.png" alt="cp">
 
 ## Installation
 
