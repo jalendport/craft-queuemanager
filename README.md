@@ -71,6 +71,7 @@ Full queue:
 
 Some things to do, and ideas for potential features:
 
+- CP nav badge
 - Cron documentation
 - Responsive tables
 - Filter results
