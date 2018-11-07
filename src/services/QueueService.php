@@ -54,6 +54,13 @@ class QueueService extends Component
         return $info;
     }
 
+    public function getJobCount()
+    {
+        return (new Query())
+            ->from('{{%queue}}')
+            ->count();
+    }
+
     // Private Methods
     // =========================================================================
 
