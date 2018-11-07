@@ -1,3 +1,5 @@
+import tippy from 'tippy.js';
+
 // Display dropdown menu on button click
 $('.qm-dropdown-button').on('click', function() {
   $(this).parent().find('.qm-dropdown-menu').toggle();

@@ -4,6 +4,8 @@
 
 @tailwind utilities;
 
+@import '../../../node_modules/tippy.js/dist/tippy.css';
+
 /* Overrides */
 
 #main-container #main #header {
