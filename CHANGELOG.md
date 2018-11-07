@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+### Fixed
+- Last table row shouldn't have a border
+
 ## 1.0.1 - 2018-11-07
 
 ### Added
