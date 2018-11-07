@@ -84,8 +84,8 @@
                 @apply tw-px-6 tw-py-4;
             }
 
-            &:not(:last-child) {
-                @apply tw-border-b tw-border-solid tw-border-grey-lighter;
+            &:not(:first-child) {
+                @apply tw-border-t tw-border-solid tw-border-grey-lighter;
             }
         }
 
