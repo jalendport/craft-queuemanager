@@ -20,5 +20,5 @@ mix.js('src/assetbundles/src/vendor.js', 'src/assetbundles/dist/bundle.js')
     ],
     extractor: TailwindExtractor,
     extensions: ['html', 'twig', 'js', 'css', 'scss'],
-    whitelistPatterns: [],
+    whitelistPatterns: [/tippy-/],
   });

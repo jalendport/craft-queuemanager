@@ -50,6 +50,7 @@ class QueueManager extends Plugin
         $ret = parent::getCpNavItem();
 
         $ret['label'] = $this->name;
+        $ret['badgeCount'] = $this->queue->getJobCount();
 
         return $ret;
     }

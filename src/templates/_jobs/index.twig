@@ -15,7 +15,7 @@
                     {{ csrfInput() }}
                     <input type="hidden" name="action" value="queue-manager/queue/retry-all">
 
-                    <button class="qm-button" type="submit">Retry all</button>
+                    <button class="qm-button" type="submit" data-tippy="This will retry every job in the queue">Retry all</button>
                   </form>
                 </div>
 
@@ -24,7 +24,7 @@
                     {{ csrfInput() }}
                     <input type="hidden" name="action" value="queue-manager/queue/release-all">
 
-                    <button class="qm-button" type="submit">Cancel all</button>
+                    <button class="qm-button" type="submit" data-tippy="This will cancel every job in the queue">Cancel all</button>
                   </form>
                 </div>
               </div>
@@ -51,7 +51,11 @@
                   </td>
                   <td class="tw-w-px">
                     {% if job.fail %}
-                      <div class="qm-status qm-red">failed</div>
+                      <div class="qm-status qm-red"
+                      {% if job.error %}
+                      data-tippy="{{ job.error }}"
+                      {% endif %}
+                      >failed</div>
                     {% elseif job.timeUpdated is null %}
                       <div class="qm-status qm-orange">pending</div>
                     {% else %}
@@ -64,7 +68,7 @@
                   <td class="tw-w-px">
                     <div class="qm-actions">
                       <div>
-                        <button class="qm-action qm-view-data" data-job-id="{{ job.id }}" title="View">
+                        <button class="qm-action qm-view-data" data-job-id="{{ job.id }}" data-tippy="View job">
                           {% include "queue-manager/_icons/solid/eye.svg" ignore missing %}
                         </button>
                       </div>
@@ -73,7 +77,7 @@
                           {{ csrfInput() }}
                           <input type="hidden" name="action" value="queue-manager/queue/retry">
 
-                          <button class="qm-action" type="submit" name="id" value="{{ job.id }}" title="Try again">
+                          <button class="qm-action" type="submit" name="id" value="{{ job.id }}" data-tippy="Retry job">
                             {% include "queue-manager/_icons/solid/redo-alt.svg" ignore missing %}
                           </button>
                         </form>
@@ -83,7 +87,7 @@
                           {{ csrfInput() }}
                           <input type="hidden" name="action" value="queue-manager/queue/release">
 
-                          <button class="qm-action" type="submit" name="id" value="{{ job.id }}" title="Cancel">
+                          <button class="qm-action" type="submit" name="id" value="{{ job.id }}" data-tippy="Cancel job">
                             {% include "queue-manager/_icons/solid/times-circle.svg" ignore missing %}
                           </button>
                         </form>
