@@ -2,10 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## Unreleased
+## 1.0.2 - 2018-11-08
 
 ### Fixed
 - Last table row shouldn't have a border
+- Whole-queue functionality no longer limited to 200 results at a time
 
 ## 1.0.1 - 2018-11-07
 
