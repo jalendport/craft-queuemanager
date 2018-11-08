@@ -44,7 +44,7 @@ class QueueController extends Controller
 
     public function actionRetryAll()
     {
-        $jobs = QueueManager::$plugin->queue->getJobs();
+        $jobs = QueueManager::$plugin->queue->getJobIds();
 
         if (!$jobs) {
             $this->outputString('Error', Console::BOLD, Console::FG_RED);
@@ -62,7 +62,7 @@ class QueueController extends Controller
 
     public function actionCancelAll()
     {
-        $jobs = QueueManager::$plugin->queue->getJobs();
+        $jobs = QueueManager::$plugin->queue->getJobIds();
 
         if (!$jobs) {
             $this->outputString('Error', Console::BOLD, Console::FG_RED);

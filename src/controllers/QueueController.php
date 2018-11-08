@@ -40,7 +40,7 @@ class QueueController extends Controller
     {
         $this->requirePostRequest();
 
-        $jobs = QueueManager::$plugin->queue->getJobs();
+        $jobs = QueueManager::$plugin->queue->getJobIds();
 
         if ($jobs) {
             foreach($jobs as $job) {
@@ -57,7 +57,7 @@ class QueueController extends Controller
     {
         $this->requirePostRequest();
 
-        $jobs = QueueManager::$plugin->queue->getJobs();
+        $jobs = QueueManager::$plugin->queue->getJobIds();
 
         if ($jobs) {
             foreach($jobs as $job) {
