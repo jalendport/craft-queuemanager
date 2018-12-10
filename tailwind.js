@@ -47,6 +47,8 @@ let colors = {
   'transparent': 'transparent',
 
   'black': '#22292f',
+  'black-75': 'rgba(34, 41, 47, .75)',
+
   'grey-darkest': '#3d4852',
   'grey-darker': '#606f7b',
   'grey-dark': '#8795a1',
@@ -782,6 +784,7 @@ module.exports = {
     '30': 30,
     '40': 40,
     '50': 50,
+    '200': 200,
   },
 
 
