@@ -2,6 +2,8 @@
 
 namespace lukeyouell\queuemanager;
 
+use lukeyouell\queuemanager\models\Settings;
+
 use Craft;
 use craft\base\Plugin;
 use craft\events\RegisterUrlRulesEvent;
@@ -53,5 +55,13 @@ class QueueManager extends Plugin
         $ret['badgeCount'] = $this->queue->getJobCount();
 
         return $ret;
+    }
+
+    // Protected Methods
+    // =========================================================================
+
+    protected function createSettingsModel()
+    {
+        return new Settings();
     }
 }
