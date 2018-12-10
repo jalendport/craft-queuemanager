@@ -24,6 +24,7 @@ class CpController extends Controller
 
         $this->variables = [
             'title' => 'Queue Manager',
+            'settings' => QueueManager::getInstance()->settings,
         ];
     }
 
