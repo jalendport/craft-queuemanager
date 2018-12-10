@@ -20,6 +20,10 @@
 
 .qm-wrapper {
     @apply tw-bg-grey-lighter tw-min-h-screen;
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
 }
 
 .qm-inner {
