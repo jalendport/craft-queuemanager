@@ -45,6 +45,7 @@ class QueueService extends Component
                 'timeUpdated' => $result['timeUpdated'],
                 'ttr'         => $result['ttr'],
                 'priority'    => $result['priority'],
+                'progress'    => $result['progress'],
                 'fail'        => (int)$result['fail'],
                 'dateFailed'  => $result['dateFailed'],
                 'error'       => $result['error'],
