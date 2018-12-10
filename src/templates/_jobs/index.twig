@@ -27,6 +27,11 @@
                     <button class="qm-button" type="submit" data-tippy="This will cancel every job in the queue">Cancel all</button>
                   </form>
                 </div>
+
+                <div class="tw-px-2">
+                  <button class="qm-button-settings" data-micromodal-trigger="modal-settings"></button>
+                  {% include "queue-manager/_modals/settings" %}
+                </div>
               </div>
             </div>
           {% endif %}
