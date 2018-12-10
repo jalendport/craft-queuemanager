@@ -60,11 +60,19 @@
     @apply tw-text-xs tw-text-grey-darker tw--mt-1 tw-mb-2;
 }
 
+.qm-input-alert {
+    @apply tw-text-xs tw-text-craft-orange tw-mt-2;
+}
+
 .qm-input {
     @apply tw-block tw-appearance-none tw-outline-none tw-bg-white tw-w-full tw-p-3 tw-text-base tw-text-black tw-leading-tight tw-border tw-border-solid tw-border-grey-light tw-rounded;
 
     &:focus {
         @apply tw-border-grey;
+    }
+
+    &[disabled] {
+        @apply tw-bg-grey-lighter tw-text-grey;
     }
 }
 

@@ -13,7 +13,10 @@
       <div class="qm-input-group">
         <label class="qm-label" for="jobLimit">Job limit</label>
         <div class="qm-input-description">Set to 0 to display all jobs (not recommended)</div>
-        <input class="qm-input" id="jobLimit" name="jobLimit" type="number" placeholder="Job limit" value="{{ settings.jobLimit }}" required>
+        <input class="qm-input" id="jobLimit" name="jobLimit" type="number" placeholder="Job limit" value="{{ settings.jobLimit }}" required {% if 'jobLimit' in overrides %}disabled{% endif %}>
+        {% if 'jobLimit' in overrides %}
+          <div class="qm-input-alert">This setting is being overriden in the config file.</div>
+        {% endif %}
       </div>
 
       <div class="qm-input-group">
