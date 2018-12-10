@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Maximum number of displayed jobs can now be set in the CP or config file
+- Progress value is now shown
 
 ### Fixed
 - CSS bugs
