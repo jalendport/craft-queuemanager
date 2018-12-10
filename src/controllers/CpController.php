@@ -22,8 +22,13 @@ class CpController extends Controller
     {
         parent::init();
 
+        $plugin = QueueManager::getInstance();
+        $overrides = Craft::$app->getConfig()->getConfigFromFile(strtolower($plugin->handle));
+
         $this->variables = [
             'title' => 'Queue Manager',
+            'settings' => $plugin->settings,
+            'overrides' => array_keys($overrides),
         ];
     }
 

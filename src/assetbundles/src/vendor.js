@@ -11,3 +11,9 @@ $('.qm-view-data').on('click', function() {
 
   $('.qm-table-data[data-job-id=' + id + ']').toggle();
 });
+
+import micromodal from 'micromodal';
+
+micromodal.init({
+  awaitCloseAnimation: true,
+});

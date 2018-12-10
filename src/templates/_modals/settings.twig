@@ -1,0 +1,27 @@
+<div class="modal" id="modal-settings" aria-hidden="true" data-micromodal-close>
+  <div class="modal-body tw-max-w-sm">
+    <div class="modal-close text-grey-darkest hover:text-blue" data-micromodal-close>
+      <svg class="tw-block tw-h-4 tw-fill-current tw-pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M207.6 256l107.72-107.72c6.23-6.23 6.23-16.34 0-22.58l-25.03-25.03c-6.23-6.23-16.34-6.23-22.58 0L160 208.4 52.28 100.68c-6.23-6.23-16.34-6.23-22.58 0L4.68 125.7c-6.23 6.23-6.23 16.34 0 22.58L112.4 256 4.68 363.72c-6.23 6.23-6.23 16.34 0 22.58l25.03 25.03c6.23 6.23 16.34 6.23 22.58 0L160 303.6l107.72 107.72c6.23 6.23 16.34 6.23 22.58 0l25.03-25.03c6.23-6.23 6.23-16.34 0-22.58L207.6 256z"/></svg>
+    </div>
+
+    <div class="tw-text-2xl tw-mb-6">Settings</div>
+
+    <form method="post" action="" accept-charset="UTF-8">
+      {{ csrfInput() }}
+      <input type="hidden" name="action" value="queue-manager/settings/save">
+
+      <div class="qm-input-group">
+        <label class="qm-label" for="jobLimit">Job limit</label>
+        <div class="qm-input-description">Set to 0 to display all jobs (not recommended)</div>
+        <input class="qm-input" id="jobLimit" name="jobLimit" type="number" placeholder="Job limit" value="{{ settings.jobLimit }}" required {% if 'jobLimit' in overrides %}disabled{% endif %}>
+        {% if 'jobLimit' in overrides %}
+          <div class="qm-input-alert">This setting is being overriden in the config file.</div>
+        {% endif %}
+      </div>
+
+      <div class="qm-input-group">
+        <button class="qm-button" type="submit">Save settings</button>
+      </div>
+    </form>
+  </div>
+</div>

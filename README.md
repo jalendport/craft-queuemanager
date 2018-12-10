@@ -67,6 +67,24 @@ Full queue:
 ./craft queue-manager/queue/cancel-all
 ```
 
+## Overriding Plugin Settings
+
+If you create a [config file](https://craftcms.com/docs/config-settings) in your `config` folder called `queue-manager.php`, you can override the plugin’s settings in the Control Panel. Since that config file is fully [multi-environment](https://craftcms.com/docs/multi-environment-configs) aware, this is a handy way to have different settings across multiple environments.
+
+Here’s what that config file might look like along with a list of all of the possible values you can override.
+
+```php
+<?php
+
+return [
+    'jobLimit' => 1000,
+];
+```
+
+| Parameter | Expected Value |
+| --------- | -------------- |
+| `jobLimit` | Integer |
+
 ## Roadmap
 
 Some things to do, and ideas for potential features:

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 1.1.0 - 2018-12-10
+
+### Added
+- Maximum number of displayed jobs can now be set in the CP or config file
+- Progress value is now shown
+
+### Fixed
+- CSS bugs
+
 ## 1.0.2 - 2018-11-08
 
 ### Fixed

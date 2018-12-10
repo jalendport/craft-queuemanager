@@ -45,6 +45,7 @@ class QueueService extends Component
                 'timeUpdated' => $result['timeUpdated'],
                 'ttr'         => $result['ttr'],
                 'priority'    => $result['priority'],
+                'progress'    => $result['progress'],
                 'fail'        => (int)$result['fail'],
                 'dateFailed'  => $result['dateFailed'],
                 'error'       => $result['error'],
@@ -74,9 +75,27 @@ class QueueService extends Component
 
     private function _createJobQuery(): Query
     {
+        $limit = $this->_getLimit();
+
         return (new Query())
             ->from('{{%queue}}')
             ->orderBy(['timePushed' => SORT_DESC])
-            ->limit(200);
+            ->limit($limit);
+    }
+
+    private function _getSettings()
+    {
+        return QueueManager::getInstance()->getSettings();
+    }
+
+    private function _getLimit()
+    {
+        $limit = $this->_getSettings()->jobLimit ?? 200;
+
+        if ($limit == 0) {
+            $limit = null;
+        }
+
+        return $limit;
     }
 }
