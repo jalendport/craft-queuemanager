@@ -8,8 +8,8 @@ class TailwindExtractor {
   }
 }
 
-mix.js('src/assetbundles/src/vendor.js', 'src/assetbundles/dist/bundle.js')
-  .sass('src/assetbundles/src/styles.scss', 'src/assetbundles/dist/styles.css')
+mix.js('src/assetbundles/src/js/app.js', 'src/assetbundles/dist')
+  .sass('src/assetbundles/src/sass/app.scss', 'src/assetbundles/dist')
   .options({
     processCssUrls: false,
     postCss: [ require('tailwindcss')('tailwind.js') ],
@@ -19,6 +19,6 @@ mix.js('src/assetbundles/src/vendor.js', 'src/assetbundles/dist/bundle.js')
       path.join(__dirname, 'src/templates/**/*.{html,twig}'),
     ],
     extractor: TailwindExtractor,
-    extensions: ['html', 'twig', 'js', 'css', 'scss'],
-    whitelistPatterns: [/tippy-/],
+    extensions: ['html', 'twig'],
+    whitelistPatterns: [],
   });

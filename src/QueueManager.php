@@ -3,10 +3,13 @@
 namespace lukeyouell\queuemanager;
 
 use lukeyouell\queuemanager\models\Settings;
+use lukeyouell\queuemanager\utilities\Queue as QueueUtility;
 
 use Craft;
 use craft\base\Plugin;
+use craft\events\RegisterComponentTypesEvent;
 use craft\events\RegisterUrlRulesEvent;
+use craft\services\Utilities;
 use craft\web\UrlManager;
 
 use Yii\base\Event;
@@ -38,6 +41,15 @@ class QueueManager extends Plugin
             function (RegisterUrlRulesEvent $event) {
                 $event->rules['queue-manager'] = 'queue-manager/cp/jobs';
                 $event->rules['queue-manager/<status>'] = 'queue-manager/cp/jobs';
+            }
+        );
+
+        // Register our utility type
+        Event::on(
+            Utilities::class,
+            Utilities::EVENT_REGISTER_UTILITY_TYPES,
+            function (RegisterComponentTypesEvent $event) {
+                $event->types[] = QueueUtility::class;
             }
         );
 

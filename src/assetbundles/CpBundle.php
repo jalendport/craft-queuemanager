@@ -18,11 +18,11 @@ class CpBundle extends AssetBundle
         ];
 
         $this->js = [
-            'dist/bundle.js',
+            'dist/app.js',
         ];
 
         $this->css = [
-            'dist/styles.css',
+            'dist/app.css',
         ];
 
         parent::init();

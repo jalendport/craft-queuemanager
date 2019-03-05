@@ -1,0 +1,58 @@
+<table class="qm-w-full">
+  <thead>
+    <tr class="qm-text-left qm-border-b qm-border-solid qm-border-grey-light">
+      <th class="qm-px-5 qm-py-3">Job</th>
+      <th class="qm-px-5 qm-py-3">Status</th>
+      <th class="qm-px-5 qm-py-3">Happened</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% for job in jobs %}
+      <tr class="qm-border-b qm-border-solid qm-border-grey-light">
+        <td class="qm-px-5 qm-py-3">
+          {{ job.description }}
+        </td>
+        <td class="qm-w-px qm-px-5 qm-py-3 qm-font-bold">
+          {% if job.fail %}
+            <div class="qm-text-red"
+            {% if job.error %}
+            data-tippy="{{ job.error }}"
+            {% endif %}
+            >failed</div>
+          {% elseif job.timeUpdated is null %}
+            <div class="qm-text-orange">pending</div>
+          {% else %}
+            <div class="">reserved</div>
+          {% endif %}
+        </td>
+        <td class="qm-w-px qm-px-5 qm-py-3 qm-whitespace-no-wrap">
+          {{ job.timePushed|datetime('short') }}
+        </td>
+        <td class="qm-w-px qm-px-5 qm-py-3">
+          <span class="qm-cursor-pointer">View</span>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="qm-pt-3" colspan="4">
+          <table class="qm-w-full">
+            <tr>
+              <th class="qm-w-px qm-px-5 qm-pb-3 qm-font-bold">ID</th>
+              <td class="qm-px-5 qm-pb-3">{{ job.id ?? 'null' }}
+            </tr>
+            <tr>
+              <th class="qm-w-px qm-px-5 qm-pb-3 qm-font-bold">TTR</th>
+              <td class="qm-px-5 qm-pb-3">{{ job.ttr ?? 'null' }}
+            </tr>
+            <tr>
+              <th class="qm-w-px qm-px-5 qm-pb-3 qm-font-bold">Priority</th>
+              <td class="qm-px-5 qm-pb-3">{{ job.priority ?? 'null' }}
+            </tr>
+          </table>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
