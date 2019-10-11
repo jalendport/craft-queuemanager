@@ -37,6 +37,10 @@ class QueueService extends Component
         $info = [];
 
         foreach ($results as $result) {
+            if (is_array($result) && is_resource($result['job'])) {
+                $result['job'] = stream_get_contents($result['job']);
+            }
+            
             $info[] = [
                 'id'          => $result['id'],
                 'data'        => unserialize($result['job']),
