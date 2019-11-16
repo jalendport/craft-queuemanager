@@ -1,6 +1,6 @@
 <?php
 
-namespace lukeyouell\queuemanager\models;
+namespace jalendport\queuemanager\models;
 
 use Craft;
 use craft\base\Model;

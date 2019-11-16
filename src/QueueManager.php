@@ -1,8 +1,8 @@
 <?php
 
-namespace lukeyouell\queuemanager;
+namespace jalendport\queuemanager;
 
-use lukeyouell\queuemanager\models\Settings;
+use jalendport\queuemanager\models\Settings;
 
 use Craft;
 use craft\base\Plugin;
@@ -43,7 +43,7 @@ class QueueManager extends Plugin
 
         // Register components
         $this->setComponents([
-            'queue' => \lukeyouell\queuemanager\services\QueueService::class,
+            'queue' => \jalendport\queuemanager\services\QueueService::class,
         ]);
     }
 

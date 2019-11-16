@@ -1,9 +1,9 @@
 <?php
 
-namespace lukeyouell\queuemanager\controllers;
+namespace jalendport\queuemanager\controllers;
 
-use lukeyouell\queuemanager\QueueManager;
-use lukeyouell\queuemanager\assetbundles\CpBundle;
+use jalendport\queuemanager\QueueManager;
+use jalendport\queuemanager\assetbundles\CpBundle;
 
 use Craft;
 use craft\web\Controller;
