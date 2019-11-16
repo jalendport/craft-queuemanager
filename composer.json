@@ -1,5 +1,5 @@
 {
-    "name": "lukeyouell/craft-queue-manager",
+    "name": "jalendport/craft-queuemanager",
     "description": "Job Queue Manager for Craft CMS.",
     "type": "craft-plugin",
     "version": "1.1.0",
@@ -11,11 +11,15 @@
         "queue manager"
     ],
     "support": {
-        "docs": "https://github.com/lukeyouell/craft-queue-manager/blob/master/README.md",
-        "issues": "https://github.com/lukeyouell/craft-queue-manager/issues"
+        "docs": "https://github.com/jalendport/craft-queuemanager/blob/master/README.md",
+        "issues": "https://github.com/jalendport/craft-queuemanager/issues"
     },
     "license": "MIT",
     "authors": [
+        {
+            "name": "Jalen Davenport",
+            "homepage": "https://jalendport.com"
+        },
         {
             "name": "Luke Youell",
             "homepage": "https://github.com/lukeyouell"
@@ -26,7 +30,7 @@
     },
     "autoload": {
         "psr-4": {
-          "lukeyouell\\queuemanager\\": "src/"
+          "jalendport\\queuemanager\\": "src/"
         }
     },
     "extra": {
@@ -34,7 +38,7 @@
         "handle": "queue-manager",
         "hasCpSettings": false,
         "hasCpSection": true,
-        "changelogUrl": "https://raw.githubusercontent.com/lukeyouell/craft-queue-manager/master/CHANGELOG.md",
-        "class": "lukeyouell\\queuemanager\\QueueManager"
+        "changelogUrl": "https://raw.githubusercontent.com/jalendport/craft-queuemanager/master/CHANGELOG.md",
+        "class": "jalendport\\queuemanager\\QueueManager"
     }
 }
