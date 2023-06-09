@@ -1,3 +1,8 @@
+> **Warning**  
+> This project has been abandoned in favor of the built-in queue manager utility (Craft 3.4.0 and newer).
+
+---
+
 <img src="src/icon.svg" alt="icon" width="100" height="100">
 
 # Queue Manager for Craft CMS 3
