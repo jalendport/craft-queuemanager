@@ -1,5 +1,5 @@
 > **Warning**  
-> This project has been abandoned in favor of the built-in queue manager utility (Craft 3.4.0 and newer).
+> This plugin has been abandoned in favor of the built-in queue manager utility (Craft 3.4.0 and newer).
 
 ---
 
